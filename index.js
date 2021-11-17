@@ -46,6 +46,7 @@ io.on("connection", async socket => {
 		socket.emit("qrstatus", "./assets/check.svg")
 		socket.emit("log", "WhatsApp terhubung!")
 		socket.emit("log", res)
+                res.json(wa.base64EncodedAuthInfo())
 	})
 
 	wa.on("close", res => {
